@@ -1,0 +1,1041 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diş Hekimi Onur KILIÇ | Elazığ Diş Kliniği</title>
+    
+    <!-- SEO & Metatags -->
+    <meta name="description" content="Diş Hekimi Onur KILIÇ - Elazığ Merkez'de profesyonel implant, kanal tedavisi, estetik diş beyazlatma ve koruyucu diş hekimliği hizmetleri.">
+    <meta name="keywords" content="Diş Hekimi Onur KILIÇ, Elazığ Diş Hekimi, Elazığ Implant, Elazığ Diş Kliniği">
+    
+    <!-- Font Awesome İkonları -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* ==========================================
+           1. TEMEL RENKLER VE SIFIRLAMA
+           ========================================== */
+        :root {
+            --primary-baby-blue: #8ecae6;
+            --secondary-blue: #219ebc;
+            --dark-blue: #023047;
+            --light-bg: #f8fcff;
+            --white: #ffffff;
+            --text-dark: #2b2d42;
+            --text-muted: #6c757d;
+            --shadow: 0 10px 30px rgba(142, 202, 230, 0.25);
+            --transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ==========================================
+           2. EN ÜST BİLGİ BARI (TOP BAR)
+           ========================================== */
+        .top-bar {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            padding: 8px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+            position: relative;
+            z-index: 1001;
+        }
+
+        .top-info {
+            display: flex;
+            gap: 20px;
+        }
+
+        .top-info a {
+            color: var(--white);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+
+        .top-info a:hover {
+            color: var(--primary-baby-blue);
+        }
+
+        .top-social a {
+            color: var(--white);
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+
+        .top-social a:hover {
+            color: var(--primary-baby-blue);
+            transform: translateY(-2px);
+        }
+
+        /* ==========================================
+           3. HEADER & LOGO & MENÜ (NAVBAR)
+           ========================================== */
+        header {
+            background-color: var(--white);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--dark-blue);
+        }
+
+        .logo i {
+            font-size: 2rem;
+            color: var(--secondary-blue);
+            background: linear-gradient(135deg, var(--primary-baby-blue), var(--secondary-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .logo-text {
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            color: var(--secondary-blue);
+        }
+
+        .menu-toggle {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+            z-index: 1002;
+            padding: 10px;
+        }
+
+        .menu-toggle .bar {
+            width: 28px;
+            height: 3px;
+            background-color: var(--dark-blue);
+            border-radius: 3px;
+            transition: var(--transition);
+        }
+
+        .nav-menu {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 320px;
+            height: 100vh;
+            background-color: var(--white);
+            box-shadow: -10px 0 30px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            transition: var(--transition);
+            z-index: 1001;
+        }
+
+        .nav-menu.active {
+            right: 0;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: var(--dark-blue);
+            font-size: 1.3rem;
+            font-weight: 600;
+            position: relative;
+            transition: var(--transition);
+        }
+
+        .nav-menu a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--secondary-blue);
+            border-radius: 2px;
+            transition: var(--transition);
+        }
+
+        .nav-menu a:hover::after {
+            width: 100%;
+        }
+
+        .menu-toggle.active .bar:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+        .menu-toggle.active .bar:nth-child(2) { opacity: 0; }
+        .menu-toggle.active .bar:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+        /* ==========================================
+           4. HERO (ANA SAYFA) BÖLÜMÜ
+           ========================================== */
+        .hero {
+            padding: 80px 5%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 80vh;
+            background: linear-gradient(135deg, rgba(248,252,255,1) 0%, rgba(226,243,253,1) 100%);
+        }
+
+        .hero-content {
+            max-width: 600px;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        .hero-subtitle {
+            color: var(--secondary-blue);
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            color: var(--dark-blue);
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 30px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: var(--secondary-blue);
+            color: var(--white);
+            box-shadow: 0 5px 15px rgba(33, 158, 188, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--dark-blue);
+            transform: translateY(-3px);
+        }
+
+        .btn-outline {
+            border: 2px solid var(--secondary-blue);
+            color: var(--secondary-blue);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--secondary-blue);
+            color: var(--white);
+            transform: translateY(-3px);
+        }
+
+        .hero-image {
+            position: relative;
+            animation: float 5s ease-in-out infinite;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 440px;
+            height: 520px;
+            object-fit: cover;
+            border-radius: 25px;
+            box-shadow: var(--shadow);
+            border: 6px solid var(--white);
+        }
+
+        /* ==========================================
+           5. TEDAVİLERİMİZ (KARTLAR VE TIKLAMA)
+           ========================================== */
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: var(--dark-blue);
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 10px auto 0;
+        }
+
+        .treatments {
+            padding: 80px 5%;
+            background-color: var(--white);
+        }
+
+        .treatments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .treatment-card {
+            background-color: var(--white);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border: 1px solid rgba(142, 202, 230, 0.3);
+            transition: var(--transition);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .treatment-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow);
+            border-color: var(--secondary-blue);
+        }
+
+        .card-img {
+            height: 210px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 25px;
+        }
+
+        .card-body h3 {
+            color: var(--dark-blue);
+            margin-bottom: 12px;
+            font-size: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-body h3 i {
+            color: var(--secondary-blue);
+        }
+
+        .card-body p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .card-more {
+            margin-top: 15px;
+            color: var(--secondary-blue);
+            font-weight: 600;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* ==========================================
+           6. DETAYLI AÇILIR PENCERE (MODAL POPUP)
+           ========================================== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(2, 48, 71, 0.7);
+            backdrop-filter: blur(5px);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            padding: 20px;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-container {
+            background: var(--white);
+            width: 100%;
+            max-width: 800px;
+            max-height: 85vh;
+            border-radius: 20px;
+            overflow-y: auto;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+            transform: scale(0.8);
+            transition: var(--transition);
+            padding: 40px;
+        }
+
+        .modal-overlay.active .modal-container {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 25px;
+            font-size: 1.8rem;
+            color: var(--dark-blue);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .modal-close:hover {
+            color: #d90429;
+            transform: rotate(90deg);
+        }
+
+        .modal-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e2f3fd;
+            padding-bottom: 15px;
+        }
+
+        .modal-header i {
+            font-size: 2.2rem;
+            color: var(--secondary-blue);
+        }
+
+        .modal-header h2 {
+            color: var(--dark-blue);
+            font-size: 1.8rem;
+        }
+
+        .modal-content-body {
+            color: var(--text-dark);
+            font-size: 1rem;
+            line-height: 1.8;
+        }
+
+        .modal-content-body h4 {
+            color: var(--secondary-blue);
+            margin: 20px 0 8px 0;
+            font-size: 1.15rem;
+        }
+
+        .modal-content-body ul {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .modal-content-body li {
+            margin-bottom: 6px;
+        }
+
+        /* ==========================================
+           7. İLETİŞİM & HARİTA BÖLÜMÜ
+           ========================================== */
+        .contact-section {
+            padding: 80px 5%;
+            background-color: var(--light-bg);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 40px;
+            background-color: var(--white);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: var(--shadow);
+        }
+
+        .contact-info h3 {
+            font-size: 1.8rem;
+            color: var(--dark-blue);
+            margin-bottom: 20px;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .info-item i {
+            font-size: 1.4rem;
+            color: var(--secondary-blue);
+            background-color: #e2f3fd;
+            padding: 12px;
+            border-radius: 12px;
+        }
+
+        .info-text h4 {
+            color: var(--dark-blue);
+            font-size: 1rem;
+        }
+
+        .info-text p, .info-text a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: var(--transition);
+        }
+
+        .info-text a:hover {
+            color: var(--secondary-blue);
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn-social {
+            padding: 12px 20px;
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--white);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+
+        .btn-instagram { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .btn-maps { background-color: #4285F4; }
+
+        .btn-social:hover {
+            transform: translateY(-3px);
+            opacity: 0.9;
+        }
+
+        footer {
+            background-color: var(--dark-blue);
+            color: var(--white);
+            text-align: center;
+            padding: 25px 5%;
+            font-size: 0.9rem;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @media (max-width: 768px) {
+            .top-bar { flex-direction: column; gap: 8px; text-align: center; }
+            .hero { flex-direction: column; text-align: center; padding-top: 40px; }
+            .hero h1 { font-size: 2.2rem; }
+            .btn-group { justify-content: center; }
+            .hero-image { margin-top: 40px; }
+            .modal-container { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. EN ÜST İLETİŞİM BARI -->
+    <div class="top-bar">
+        <div class="top-info">
+            <a href="tel:+905416763357"><i class="fa-solid fa-phone"></i> +90 541 676 33 57</a>
+            <a href="mailto:Onur87066@gmail.com"><i class="fa-solid fa-envelope"></i> Onur87066@gmail.com</a>
+        </div>
+        <div class="top-social">
+            <a href="https://www.instagram.com/onur_kilic23/?hl=tr" target="_blank" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+    </div>
+
+    <!-- 2. HEADER & LOGO & MENÜ -->
+    <header>
+        <a href="#anasayfa" class="logo">
+            <i class="fa-solid fa-tooth"></i>
+            <div class="logo-text">Diş Hekimi <span>Onur KILIÇ</span></div>
+        </a>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+
+        <nav class="nav-menu" id="nav-links">
+            <a href="#anasayfa" class="nav-link">Anasayfa</a>
+            <a href="#tedaviler" class="nav-link">Tedavilerimiz</a>
+            <a href="#iletisim" class="nav-link">İletişim</a>
+        </nav>
+    </header>
+
+    <!-- 3. ANASAYFA (HERO SECTION) -->
+    <section class="hero" id="anasayfa">
+        <div class="hero-content">
+            <div class="hero-subtitle">Elazığ Özel Diş Sağlığı Hizmetleri</div>
+            <h1>Sağlıklı Gülüşünüz Güvenli Ellerde</h1>
+            <p>Modern teknoloji, steril klinik ortamı ve hasta memnuniyeti odaklı tedavi yaklaşımlarımızla Elazığ'da hizmetinizdeyiz.</p>
+            <div class="btn-group">
+                <a href="#iletisim" class="btn btn-primary"><i class="fa-solid fa-calendar-check"></i> Randevu Alın</a>
+                <a href="#tedaviler" class="btn btn-outline">Tedavilerimizi İnceleyin</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <!-- DÜZELTİLEN YEREL DOSYA YOLU -->
+            <img src="klinik.jpg" alt="Diş Hekimi Onur KILIÇ Klinik Çalışması" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=800&q=80';">
+        </div>
+    </section>
+
+    <!-- 4. TEDAVİLERİMİZ SEKSİYONU -->
+    <section class="treatments" id="tedaviler">
+        <div class="section-title">
+            <h2>Profesyonel Tedavilerimiz</h2>
+            <p>Ağız ve diş sağlığınız için kliniğimizde uygulanan tedavi yöntemleri. Detaylı bilgi için kartlara tıklayabilirsiniz.</p>
+        </div>
+
+        <div class="treatments-grid">
+
+            <!-- 1. Muayene & Röntgen -->
+            <div class="treatment-card" onclick="openModal('muayene')">
+                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Diş Muayenesi">
+                <div class="card-body">
+                    <h3><i class="fa-solid fa-stethoscope"></i> Diş Muayenesi Ve Röntgen</h3>
+                    <p>Erken teşhis için dijital radyografi ve detaylı ağız içi muayenesi ile sorunlar anında tespit edilir.</p>
+                    <div class="card-more">Detaylı Bilgi İçin Tıklayın <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
+            <!-- 2. Dolgu -->
+            <div class="treatment-card" onclick="openModal('dolgu')">
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Dolgu Tedavisi">
+                <div class="card-body">
+                    <h3><i class="fa-solid fa-tooth"></i> Dolgu Tedavileri</h3>
+                    <p>Çürük nedeniyle kaybedilen diş dokusu, estetik ve dayanıklı kompozit dolgu malzemeleri ile yenilenir.</p>
+                    <div class="card-more">Detaylı Bilgi İçin Tıklayın <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
+            <!-- 3. Kanal Tedavisi -->
+            <div class="treatment-card" onclick="openModal('kanal')">
+                <img src="https://images.unsplash.com/photo-1609840114035-3c981b782dfe?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Kanal Tedavisi">
+                <div class="card-body">
+                    <h3><i class="fa-solid fa-syringe"></i> Kanal Tedavisi</h3>
+                    <p>Enfekte olmuş diş sinirleri temizlenerek kendi doğal dişinizin çekilmeden ağızda kalması sağlanır.</p>
+                    <div class="card-more">Detaylı Bilgi İçin Tıklayın <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
+            <!-- 4. Diş Çekimi -->
+            <div class="treatment-card" onclick="openModal('cekim')">
+                <img src="https://images.unsplash.com/photo-1579684385127-1ef15d508118?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Diş Çekimi">
+                <div class="card-body">
+                    <h3><i class="fa-solid fa-toolbox"></i> Diş Çekimi</h3>
+                    <p>Kurtarılması mümkün olmayan veya gömülü dişlerin ağrısız ve steril koşullarda çekim işlemi yapılır.</p>
+                    <div class="card-more">Detaylı Bilgi İçin Tıklayın <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
+            <!-- 5. Diş Taşı Temizliği -->
+            <div class="treatment-card" onclick="openModal('temizlik')">
+                <img src="https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Diş Taşı Temizliği">
+                <div class="card-body">
+                    <h3><i class="fa-solid fa-hand-sparkles"></i> Diş Taşı Temizliği</h3>
+                    <p>Diş eti çekilmesini önlemek için biriken tartar ve plaklar ultrasonik cihazlarla temizlenir.</p>
+                    <div class="card-more">Detaylı Bilgi İçin Tıklayın <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
+            <!-- 6. Diş Eti Tedavileri -->
+            <div class="treatment-card" onclick="openModal('diseti')">
+                <img src="https://images.unsplash.com/photo-1571772996211-2f02c9727629?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Diş Eti Tedavisi">
+                <div class="card-body">
+                    <h3><i class="fa-solid fa-shield-halved"></i> Diş Eti Tedavileri</h3>
+                    <p>Diş eti kanaması, iltihap ve periodontitis gibi diş eti hastalıklarına yönelik profesyonel müdahale.</p>
+                    <div class="card-more">Detaylı Bilgi İçin Tıklayın <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
+            <!-- 7. Diş Beyazlatma -->
+            <div class="treatment-card" onclick="openModal('beyazlatma')">
+                <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Diş Beyazlatma">
+                <div class="card-body">
+                    <h3><i class="fa-solid fa-wand-magic-sparkles"></i> Diş Beyazlatma</h3>
+                    <p>Renk değişimi uğramış dişler klinik ortamında özel lazer/ışık yöntemleriyle birkaç ton açılır.</p>
+                    <div class="card-more">Detaylı Bilgi İçin Tıklayın <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
+            <!-- 8. Çocuk Diş Hekimliği -->
+            <div class="treatment-card" onclick="openModal('cocuk')">
+                <img src="https://images.unsplash.com/photo-1535585209827-a15fcdbc4c2d?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Çocuk Diş Hekimliği">
+                <div class="card-body">
+                    <h3><i class="fa-solid fa-child"></i> Çocuk Diş Hekimliği</h3>
+                    <p>Çocukların korkusuzca diş muayenesi olması için sıcak ve pedodontik yaklaşımlarla koruyucu tedaviler.</p>
+                    <div class="card-more">Detaylı Bilgi İçin Tıklayın <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
+            <!-- 9. Protez Tedavileri -->
+            <div class="treatment-card" onclick="openModal('protez')">
+                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Protez Tedavileri">
+                <div class="card-body">
+                    <h3><i class="fa-solid fa-teeth"></i> Protez Tedavileri</h3>
+                    <p>Zirkonyum kaplama, porselen ve hareketli protezler ile eksik dişlerin fonksiyonel restorasyonu.</p>
+                    <div class="card-more">Detaylı Bilgi İçin Tıklayın <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
+            <!-- 10. İmplant Tedavileri -->
+            <div class="treatment-card" onclick="openModal('implant')">
+                <img src="https://images.unsplash.com/photo-1629909615184-74f495363b67?auto=format&fit=crop&w=600&q=80" class="card-img" alt="İmplant Tedavisi">
+                <div class="card-body">
+                    <h3><i class="fa-solid fa-screw"></i> İmplant Tedavileri</h3>
+                    <p>Eksik dişlerin yerine titanyum yapay kök yerleştirilerek en doğal ve ömür boyu kullanım çözümü.</p>
+                    <div class="card-more">Detaylı Bilgi İçin Tıklayın <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
+            <!-- 11. Koruyucu Diş Hekimliği -->
+            <div class="treatment-card" onclick="openModal('koruyucu')">
+                <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&w=600&q=80" class="card-img" alt="Koruyucu Diş Hekimliği">
+                <div class="card-body">
+                    <h3><i class="fa-solid fa-user-shield"></i> Koruyucu Diş Hekimliği</h3>
+                    <p>Dişlerin çürümesini önlemek amacıyla uygulanan florür uygulaması ve fissür örtücü koruyucular.</p>
+                    <div class="card-more">Detaylı Bilgi İçin Tıklayın <i class="fa-solid fa-arrow-right"></i></div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 5. DETAY MODAL PENCERESİ (AÇILIR KUTU) -->
+    <div class="modal-overlay" id="treatmentModal">
+        <div class="modal-container">
+            <span class="modal-close" onclick="closeModal()">&times;</span>
+            <div class="modal-header">
+                <i id="modalIcon" class="fa-solid fa-tooth"></i>
+                <h2 id="modalTitle">Tedavi Detayı</h2>
+            </div>
+            <div class="modal-content-body" id="modalBody">
+                <!-- JavaScript İçeriği Buraya Yükleyecek -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. İLETİŞİM SEKSİYONU -->
+    <section class="contact-section" id="iletisim">
+        <div class="section-title">
+            <h2>İletişim & Randevu</h2>
+            <p>Sorularınız ve randevu talepleriniz için bize kolayca ulaşın.</p>
+        </div>
+
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Klinik Bilgileri</h3>
+                
+                <div class="info-item">
+                    <i class="fa-solid fa-location-dot"></i>
+                    <div class="info-text">
+                        <h4>Adresimiz</h4>
+                        <p>Yeni Muhammer Çorbacıoğlu Sk. Eriş Apt. No:9 Kat:1 ELAZIĞ / MERKEZ</p>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-phone"></i>
+                    <div class="info-text">
+                        <h4>Telefon</h4>
+                        <a href="tel:+905416763357">+90 541 676 33 57</a>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <i class="fa-solid fa-envelope"></i>
+                    <div class="info-text">
+                        <h4>E-Posta</h4>
+                        <a href="mailto:Onur87066@gmail.com">Onur87066@gmail.com</a>
+                    </div>
+                </div>
+
+                <div class="social-buttons">
+                    <a href="https://www.instagram.com/onur_kilic23/?hl=tr" target="_blank" class="btn-social btn-instagram">
+                        <i class="fa-brands fa-instagram"></i> Instagram'da Takip Et
+                    </a>
+                    <a href="https://www.google.com/maps/place/D%C4%B0%C5%9E+HEK%C4%B0M%C4%B0+ONUR+KILI%C3%87/@38.6753006,39.2174628,17z/data=!3m1!4b1!4m6!3m5!1s0x4076c10d35b41c3f:0x4200b4962d7b3b0d!8m2!3d38.6753006!4d39.2200377!16s%2Fg%2F11ymkhlwvt?entry=ttu" target="_blank" class="btn-social btn-maps">
+                        <i class="fa-solid fa-map-location-dot"></i> Google Maps'te Aç
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. FOOTER -->
+    <footer>
+        <p>&copy; 2026 Diş Hekimi Onur KILIÇ. Tüm Hakları Saklıdır.</p>
+    </footer>
+
+    <!-- JAVASCRIPT VERİLERİ VE MODAL MANTIĞI -->
+    <script>
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navLinks = document.getElementById('nav-links');
+        const links = document.querySelectorAll('.nav-link');
+
+        mobileMenu.addEventListener('click', () => {
+            mobileMenu.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        links.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+
+        // KAPSAMLI TEDAVİ DETAYLARI VERİTABANI
+        const treatmentData = {
+            muayene: {
+                title: "Diş Muayenesi ve Dijital Röntgen",
+                icon: "fa-stethoscope",
+                body: `
+                    <p>Ağız ve diş sağlığının korunmasında en kritik adım düzenli muayene ve doğru teşhistir. Kliniğimizde uygulanan klinik muayeneler, gözle görülemeyen çürükleri ve kemik kaybını tespit etmek amacıyla yüksek çözünürlüklü dijital radyografi cihazları ile desteklenmektedir.</p>
+                    <h4>Tedavi Süreci ve Aşamaları</h4>
+                    <ul>
+                        <li><b>Ağız İçi Görsel İnceleme:</b> Diş etleri, dil, yanak dokusu ve mevcut restorasyonlar detaylıca taranır.</li>
+                        <li><b>Dijital Panoramik Röntgen:</b> Düşük radyasyonlu modern dijital görüntüleme ile çene kemiği, gömülü dişler ve kök uçları incelenir.</li>
+                        <li><b>Kişiye Özel Tedavi Planlaması:</b> Tespit edilen problemler hastaya dijital ekranda gösterilerek adımları belirlenir.</li>
+                    </ul>
+                    <h4>Neden Önemlidir?</h4>
+                    <p>Başlangıç aşamasındaki diş problemleri ağrı yapmaz. Düzenli muayeneler sayesinde büyük kanal tedavileri veya çekim gereksinimi oluşmadan, küçük müdahalelerle dişler korunur.</p>
+                `
+            },
+            dolgu: {
+                title: "Estetik Kompozit Dolgu Tedavileri",
+                icon: "fa-tooth",
+                body: `
+                    <p>Çürük, kırık veya aşınma nedeniyle yapısal bütünlüğünü kaybetmiş dişlerin, doğal diş rengiyle birebir uyumlu kompozit (ışınlı) dolgu maddeleriyle restore edilmesidir.</p>
+                    <h4>Uygulama Aşamaları</h4>
+                    <ul>
+                        <li><b>Lokal Anestezi:</b> Hastanın işlem esnasında hiçbir ağrı duymaması sağlanır.</li>
+                        <li><b>Çürük Temizliği:</b> Hasarlı diş dokusu mikro-hareketli aletlerle hassasça temizlenir.</li>
+                        <li><b>Adheziv Bağlama:</b> Dolgunun dişe güçlüce tutunması için özel bağlayıcı ajanlar uygulanır.</li>
+                        <li><b>Tabakalama ve Katılaştırma:</b> Diş rengine uygun kompozit tabakalar halinde yerleştirilerek özel LED ışıkla sertleştirilir.</li>
+                        <li><b>Yükseklik Kontrolü ve Polisaj:</b> Isırma dengesi ayarlanır, pürüzsüz yüzey için parlatılır.</li>
+                    </ul>
+                    <h4>Avantajları</h4>
+                    <p>Tek seansta tamamlanır, dışarıdan bakıldığında dolgu olduğu belli olmaz ve doğal çiğneme hissiyatı sunar.</p>
+                `
+            },
+            kanal: {
+                title: "Kanal Tedavisi (Endodonti)",
+                icon: "fa-syringe",
+                body: `
+                    <p>İlerlemiş çürükler veya travma sonucu dişin iç kısmında bulunan damar ve sinir paketinin (pulpa) iltihaplanması durumunda uygulanan diş kurtarma işlemidir.</p>
+                    <h4>Kanal Tedavisi Nasıl Yapılır?</h4>
+                    <ul>
+                        <li><b>Etkili Anestezi:</b> İşlem tamamen ağrısız şekilde gerçekleştirilir.</li>
+                        <li><b>Sinirlerin Temizlenmesi:</b> Dişin kök kanallarına girilerek iltihaplı sinir dokusu çıkartılır.</li>
+                        <li><b>Dezenfeksiyon ve Şekillendirme:</b> Kök kanalları özel solüsyonlar ve döner alet sistemleri ile yıkanarak sterilize edilir.</li>
+                        <li><b>Doldurma:</b> Temizlenen kanallar doku dostu "gutta-percha" maddesi ile sızdırmaz şekilde kapatılır.</li>
+                    </ul>
+                    <h4>Doğal Dişinizi Koruyun</h4>
+                    <p>Kanal tedavisi çekilmesi gereken bir dişe verilen son şanstır. Başarılı bir kanal tedavisi sonrası diş, ağızda onlarca yıl fonksiyon görmeye devam edebilir.</p>
+                `
+            },
+            cekim: {
+                title: "Cerrahi ve Standart Diş Çekimi",
+                icon: "fa-toolbox",
+                body: `
+                    <p>Tedaviyle kurtarılması mümkün olmayan, aşırı harabiyete uğramış veya çene kavsinde yer bulamayan gömülü 20'lik dişlerin steril klinik ortamında uzaklaştırılması işlemidir.</p>
+                    <h4>Çekim Türleri</h4>
+                    <ul>
+                        <li><b>Baskısız Rutin Çekim:</b> Sallanan veya dolgu yapılamayacak derecede harap olmuş dişlerin konforlu çekimi.</li>
+                        <li><b>Cerrahi / Gömülü Diş Çekimi:</b> Çene kemiği içerisinde sıkışmış 20 yaş dişlerinin küçük cerrahi kesilerle alınması.</li>
+                    </ul>
+                    <h4>Çekim Sonrası Bakım İlkeleri</h4>
+                    <p>İşlem sonrası tampon 30 dakika sıkıca ısırılmalı, ilk 24 saat tükürülmemeli ve sıcak gıdalardan kaçınılmalıdır. Kliniğimiz çekim sonrası iyileşme sürecini yakından takip etmektedir.</p>
+                `
+            },
+            temizlik: {
+                title: "Ultrasonik Diş Taşı Temizliği (Detertraj)",
+                icon: "fa-hand-sparkles",
+                body: `
+                    <p>Tükürükteki mineraller ve yemek artıklarının birleşmesiyle oluşan diş taşları (tartar), fırçalamayla çıkmaz. Ultrasonik ses dalgaları üreten cihazlarla diş yüzeyine zarar vermeden temizlenir.</p>
+                    <h4>Neden Yapılmalıdır?</h4>
+                    <ul>
+                        <li>Diş eti kanamalarını ve ağız kokusunu anında durdurur.</li>
+                        <li>İleride oluşabilecek diş eti çekilmesi ve kemik erimesini engeller.</li>
+                        <li>Diş yüzeyindeki çay, kahve ve sigara lekelerini temizleyerek doğal parlaklık verir.</li>
+                    </ul>
+                    <h4>Sıklık</h4>
+                    <p>Ağız sağlığının sürdürülebilirliği için 6 ayda bir rutin olarak yapılması uzmanlarca tavsiye edilir.</p>
+                `
+            },
+            diseti: {
+                title: "Diş Eti Tedavileri (Periodontoloji)",
+                icon: "fa-shield-halved",
+                body: `
+                    <p>Gingivitis (diş eti iltihabı) ve Periodontitis (kemik yıkımı yapan ileri diş eti hastalığı) gibi durumların tedavilerini kapsayan uzmanlık alanıdır.</p>
+                    <h4>Semptomlar</h4>
+                    <p>Fırçalarken kanayan diş etleri, kızarıklık, şişlik, diş etlerinde çekilme ve dişlerde sallanma diş eti hastalığının habercisidir.</p>
+                    <h4>Uygulanan Tedaviler</h4>
+                    <ul>
+                        <li><b>Küretaj (Kök Yüzeyi Düzleştirme):</b> Diş eti cebi içerisindeki iltihaplı dokuların ve derin bakterilerin temizlenmesi.</li>
+                        <li><b>Lazer Destekli Terapi:</b> Dokuların daha hızlı iyileşmesi için sterilizasyon sağlanması.</li>
+                    </ul>
+                `
+            },
+            beyazlatma: {
+                title: "Profesyonel Diş Beyazlatma (Bleaching)",
+                icon: "fa-wand-magic-sparkles",
+                body: `
+                    <p>Genetik faktörler, yaşlılık, sigara veya renklendirici gıdalar nedeniyle sararan dişlerin tonunu özel klinik jelleri ve aktivatör ışıklar yardımıyla birkaç ton açma işlemidir.</p>
+                    <h4>Ofis Tipi Beyazlatma Aşamaları</h4>
+                    <ul>
+                        <li>Diş etleri zarar görmemesi için koruyucu bariyer ile kapatılır.</li>
+                        <li>Diş yüzeyine beyazlatıcı jel sürülür ve özel ışık kaynağı uygulanır.</li>
+                        <li>15-20 dakikalık periyotlarla 2-3 seansta istenen beyazlık elde edilir.</li>
+                    </ul>
+                    <h4>Güvenli midir?</h4>
+                    <p>Diş hekimi kontrolünde yapılan profesyonel beyazlatma işleminin diş minesine hiçbir zararı yoktur.</p>
+                `
+            },
+            cocuk: {
+                title: "Çocuk Diş Hekimliği (Pedodonti)",
+                icon: "fa-child",
+                body: `
+                    <p>0-13 yaş grubu çocukların süt ve daimi dişlerinin sağlıklı gelişimini takip eden, diş hekimi korkusu (dental fobi) oluşmadan tedavi süreçlerini yöneten branştır.</p>
+                    <h4>Uygulamalarımız</h4>
+                    <ul>
+                        <li><b>Süt Dişi Dolgu ve Kanal Tedavileri:</b> Süt dişleri altlarındaki kalıcı dişlere rehberlik ettiği için erken çekilmeyip korunmalıdır.</li>
+                        <li><b>Yer Tutucular:</b> Erken kaybedilen süt dişlerinin yerine komşu dişlerin kaymasını önleyen apareyler.</li>
+                        <li><b>Çocuklarla İletişim:</b> Oyun hissi uyandıran, sabırlı ve güler yüzlü klinik yaklaşımı.</li>
+                    </ul>
+                `
+            },
+            protez: {
+                title: "Protez Tedavileri (Zirkonyum & Porselen)",
+                icon: "fa-teeth",
+                body: `
+                    <p>Kaybedilmiş dişlerin estetik ve çiğneme fonksiyonunu geri kazandırmak amacıyla yapılan sabit veya hareketli yapay diş uygulamalarıdır.</p>
+                    <h4>Protez Çeşitleri</h4>
+                    <ul>
+                        <li><b>Zirkonyum Kaplamalar:</b> Işık geçirgenliği yüksek, diş eti uyumu mükemmel, metal altyapısız en estetik kaplama türü.</li>
+                        <li><b>Porselen Köprüler:</b> Eksik diş boşluklarının yanındaki dişlerden destek alınarak kapatılması.</li>
+                        <li><b>Total / Parsiyel Protezler:</b> Çok sayıda veya tüm diş eksikliğinde kullanılan takıp çıkarılmalı damak protezleri.</li>
+                    </ul>
+                `
+            },
+            implant: {
+                title: "İmplant Tedavileri (Yapay Diş Kökü)",
+                icon: "fa-screw",
+                body: `
+                    <p>Eksik dişlerin yerine çene kemiğine yerleştirilen, vücutla tamamen uyumlu titanyum vidalardır. Doğal dişe en yakın ve ömür boyu konfor sunan tedavi yöntemidir.</p>
+                    <h4>İmplantın Aşamaları</h4>
+                    <ul>
+                        <li><b>Planlama:</b> 3D Tomografi ve röntgen analizi ile çene kemiğinin genişliği ve kalitesi ölçülür.</li>
+                        <li><b>Cerrahi Yerleştirme:</b> Lokal anestezi altında titanyum implant çene kemiğine yerleştirilir (Yaklaşık 15 dk).</li>
+                        <li><b>Osseointegrasyon (Kaynama):</b> İmplantın kemikle bütünleşmesi için 2-3 ay beklenir.</li>
+                        <li><b>Protez Aşaması:</b> İmplant üzerine zirkonyum veya porselen kaplama takılarak işlem tamamlanır.</li>
+                    </ul>
+                    <h4>Avantajı</h4>
+                    <p>Yandaki sağlam dişler kesilmez veya küçültülmez, çiğneme kuvveti tıpkı kendi dişiniz gibidir.</p>
+                `
+            },
+            koruyucu: {
+                title: "Koruyucu Diş Hekimliği",
+                icon: "fa-user-shield",
+                body: `
+                    <p>Henüz çürük veya hastalık oluşmadan önce diş dokusunu dirençli hale getirmeyi ve ağız sağlığını ömür boyu sürdürmeyi amaçlayan koruyucu korumadır.</p>
+                    <h4>Koruyucu Yöntemler</h4>
+                    <ul>
+                        <li><b>Fissür Örtücü (Aşılama):</b> Azı dişlerinin çiğneyici yüzeyindeki girintilerin çürük önleyici ajanlarla kapatılması.</li>
+                        <li><b>Yüzeyel Florür Uygulaması:</b> Diş minesini asitlere ve bakterilere karşı güçlendiren jel uygulamaları.</li>
+                        <li><b>Ağız Hijyeni Eğitimi:</b> Doğru fırçalama tekniği ve arayüz fırçası kullanım rehberliği.</li>
+                    </ul>
+                `
+            }
+        };
+
+        // MODAL AÇMA FONKSİYONU
+        function openModal(key) {
+            const data = treatmentData[key];
+            if(!data) return;
+
+            document.getElementById('modalTitle').innerText = data.title;
+            document.getElementById('modalIcon').className = `fa-solid ${data.icon}`;
+            document.getElementById('modalBody').innerHTML = data.body;
+
+            document.getElementById('treatmentModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // MODAL KAPATMA FONKSİYONU
+        function closeModal() {
+            document.getElementById('treatmentModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Dışarı tıklayınca kapatma
+        window.onclick = function(event) {
+            const modal = document.getElementById('treatmentModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
